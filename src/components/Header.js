@@ -24,7 +24,7 @@ function Header() {
   ];
 
   const handleClick = () => {
-    if (showMenu == "md:hidden") {
+    if (showMenu === "md:hidden") {
       setShowMenu("");
     } else {
       setShowMenu("md:hidden");
@@ -33,7 +33,7 @@ function Header() {
 
   const pathname = window.location.pathname;
   return (
-    <div className="text-white font-mont">
+    <div className="text-white font-mont fixed top-0 left-0 right-0 z-50">
       <div
         className={`flex bg-theme justify-between items-center p-2 shadow-lg ${
           showMenu !== "md:hidden" && "md:flex-col"
@@ -53,7 +53,7 @@ function Header() {
             return (
               <li
                 className={`list-none mx-5 p-1 ${
-                  menu.key == pathname && "bg-white text-black rounded-md"
+                  menu.key === pathname && "bg-white text-black rounded-md"
                 }`}
               >
                 <Link to={`${menu.key}`}>{menu.title}</Link>
@@ -69,7 +69,7 @@ function Header() {
             return (
               <li
                 className={`list-none my-2 p-1 ${
-                  menu.key == pathname && "bg-white text-black rounded-md"
+                  menu.key === pathname && "bg-white text-black rounded-md"
                 }`}
               >
                 <Link to={`${menu.key}`}>{menu.title}</Link>
